@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="/index.css" />
+    <title>Taxs Calculator</title>
+</head>
+
+<body class="container">
+    <h3>Calculator</h3>
+    <div class="main  mt-10 no-show show">
+
+        <form action="" class="form-group">
+            <div class="form-group">
+                <label for="salarioMensual">Salario mensual</label>
+                <input type="number" class="form-control" id="salarioMensual" placeholder="0.00">
+                <small id="salarioMensual" class="form-text text-muted">El inss se calcualará en base a 7%.</small>
+            </div>
+            <button id="btn-calculateTax" type="button" class="btn btn-primary">Calcular impuestos</button>
+        </form>
+        <br />
+        <h4>Impuesto anual</h4>
+        <table class="table table-anual">
+            <thead>
+                <tr>
+                    <th>Salario anual</th>
+                    <th>Deduccion INSS</th>
+                    <th>Deduccion IR</th>
+                    <th>Sueldo Neto</th>
+                </tr>
+            </thead>
+            <tbody>
+
+            </tbody>
+        </table>
+        <h4>Impuesto mensual</h4>
+        <table class="table table-mensual">
+            <thead>
+                <tr>
+                    <th>Salario mensual</th>
+                    <th>Deduccion INSS</th>
+                    <th>Deduccion IR</th>
+                    <th>Sueldo Neto</th>
+                </tr>
+            </thead>
+            <tbody>
+
+            </tbody>
+        </table>
+        <br />
+        <a href="#" id="config">Configuración</a>
+    </div>
+    <div class="config  mt-10 no-show">
+        <div class="form-group">
+            <label for="salarioMensual">% INSS mensual</label>
+            <input type="number" class="form-control" id="salarioMensual" value="7.00" placeholder="7.00 %">
+            <br />
+            <a href="#" id="main">Regresar</a>
+        </div>
+    </div>
+    <script src="/index.js" type="module"></script>
+</body>
+
+</html>
