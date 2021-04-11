@@ -33,7 +33,6 @@ const calculteTaxs = salary => {
 
     const baseSalaryAnualy = salary * divisor;
     const inssTax = getInssTax();
-    console.log(inssTax);
 
     const inss = (baseSalaryAnualy * inssTax / 100);
 
