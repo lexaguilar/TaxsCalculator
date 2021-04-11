@@ -9,3 +9,7 @@
 .show {
     display: block;
 }
+
+table>tbody>tr>td:last-child {
+    font-weight: bold;
+}
