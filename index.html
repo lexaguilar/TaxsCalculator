@@ -18,34 +18,33 @@
             <div class="form-group">
                 <label for="salarioMensual">Salario mensual</label>
                 <input type="number" class="form-control" id="salarioMensual" placeholder="0.00">
-                <small id="salarioMensual" class="form-text text-muted">El inss se calcualará en base a 7%.</small>
+                <small id="salarioMensual" class="form-text text-muted">El inss se calcualará en base a <span>6.25</span>%. puede configurar el impuesto aquí <a href="#" id="config">Configuración</a></small>
             </div>
             <button id="btn-calculateTax" type="button" class="btn btn-primary">Calcular impuestos</button>
-        </form>
-        <br />
-        <h4>Impuestos</h4>
-        <table class="table table-anual">
-            <thead>
-                <tr>
-                    <th>Tipo</th>
-                    <th class="text-right">Salario</th>
-                    <th class="text-right">Deduccion INSS</th>
-                    <th class="text-right">Deduccion IR</th>
-                    <th class="text-right">Sueldo Neto</th>
-                </tr>
-            </thead>
-            <tbody>
+            </form <br />
+            <h4>Impuestos</h4>
+            <table class="table table-hover table-anual">
+                <thead>
+                    <tr>
+                        <th>Tipo</th>
+                        <th class="text-right">Salario</th>
+                        <th class="text-right">Deduccion INSS</th>
+                        <th class="text-right">Deduccion IR</th>
+                        <th class="text-right">Sueldo Neto</th>
+                    </tr>
+                </thead>
+                <tbody>
 
-            </tbody>
-        </table>
+                </tbody>
+            </table>
 
-        <br />
-        <a href="#" id="config">Configuración</a>
+            <br />
+
     </div>
     <div class="config  mt-10 no-show">
         <div class="form-group">
             <label for="inssMensual">% INSS mensual</label>
-            <input type="number" class="form-control" id="inssMensual" value="7.00" placeholder="7.00 %">
+            <input type="number" class="form-control" id="inssMensual" value="6.25" placeholder="0.00 %">
             <br />
             <a href="#" id="main">Regresar</a>
         </div>

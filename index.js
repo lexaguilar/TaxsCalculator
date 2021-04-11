@@ -87,4 +87,9 @@ const show = prop => {
     document.querySelector(`.${prop}`).classList.add('show');
         
 }
-document.querySelector('#inssMensual').addEventListener('change', e => setInssTax(e.target.value));
+document.querySelector('#inssMensual').addEventListener('change', e => {
+
+    setInssTax(e.target.value);
+    document.querySelector('span').innerHTML = `${round(e.target.value)}`;
+
+});
