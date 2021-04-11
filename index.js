@@ -1,4 +1,4 @@
-import { salaryRanges, getInssTax, divisor } from "./data.js";
+import { salaryRanges, getInssTax, setInssTax, divisor } from "./data.js";
 
 //Evento click del boton calcular
 document.querySelector("#btn-calculateTax")
@@ -33,6 +33,7 @@ const calculteTaxs = salary => {
 
     const baseSalaryAnualy = salary * divisor;
     const inssTax = getInssTax();
+    console.log(inssTax);
 
     const inss = (baseSalaryAnualy * inssTax / 100);
 
@@ -82,3 +83,4 @@ const show = prop => {
     document.querySelector(`.${prop}`).classList.add('show');
         
 }
+document.querySelector('#inssMensual').addEventListener('change', e => setInssTax(e.target.value));
