@@ -10,11 +10,7 @@ document.querySelector("#btn-calculateTax")
         {
             const result = calculteTaxs(salaryElemt.value);           
 
-            let draw = drawInformation('.table-anual tbody');
-            draw(result);
-
-            draw = drawInformation('.table-mensual tbody');
-            draw(getMonthly(result));
+            drawInformation(result, getMonthly(result));
 
         }
     }
@@ -24,7 +20,7 @@ const getMonthly = ({ salary, inss, ir, neto }) => objectSalary(toMonth(salary),
 
 const toMonth = value => value/divisor;
 
-const objectSalary = (salary, inss, ir, neto) => ({ salary, inss, ir, neto });
+const objectSalary = (salary, inss, ir, neto) => ({ type: 'Mensual', salary, inss, ir, neto });
 
 const calculteTaxs = salary => {
 
@@ -46,6 +42,7 @@ const calculteTaxs = salary => {
     const neto = baseSalaryBrutoAnualy - ir;
 
     return {
+        type:'Anual',
         salary : baseSalaryAnualy,
         inss,
         ir,
@@ -55,19 +52,27 @@ const calculteTaxs = salary => {
 
 const round = value => parseFloat(value).toFixed(2);
 
-const drawInformation  = selector => ({salary, inss, ir, neto}) => {
+const drawInformation  = (...props) => {
 
-    let table = document.querySelector(selector);
+    let table = document.querySelector('.table tbody');
     table.innerHTML = '';
 
-    let tr = `<tr>
-        <td>${round(salary)}</td>
-        <td>${round(inss)}</td>
-        <td>${round(ir)}</td>
-        <td>${round(neto)}</td>
+    props.forEach(x => {
+        const tr = getRow(x);
+        table.innerHTML += tr;
+    });
+}
+
+const getRow = ({type, salary, inss, ir, neto})  => {
+
+    return `<tr>
+        <td>${type}</td>
+        <td class="text-right">${round(salary)}</td>
+        <td class="text-right">${round(inss)}</td>
+        <td class="text-right">${round(ir)}</td>
+        <td class="text-right">${round(neto)}</td>
     </tr>`;
 
-    table.innerHTML = tr;
 }
 
 document.querySelectorAll('a').forEach(el => {
