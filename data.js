@@ -14,4 +14,23 @@ const getInssTax = () => inssTax;
 
 const setInssTax = newTax => (inssTax = newTax, inssTax);
 
-export { salaryRanges, divisor, getInssTax, setInssTax }
+
+const numeral = value => {
+
+    const arr = String(value).split('.')[0];
+    const decimals = String(value).split('.')[1]
+    const newArr = [...arr];
+
+    let newValue = '';
+    newArr.reverse().forEach((x, i) => {
+        if ((i+1) % 3 == 0 && (i+1) != newArr.length)
+            newValue += `${x},`;
+        else
+            newValue += x;
+    });
+    
+    return [...newValue].reverse().join('') + '.' + decimals;
+
+}
+
+export { salaryRanges, divisor, getInssTax, setInssTax, numeral }
