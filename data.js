@@ -6,7 +6,7 @@ const salaryRanges = [
     ,{ from : 500_000.01, to: undefined, base : 82_500, percent: 0.3, excess: 500_000  }
 ]
 
-let inssTax = 6.25;
+let inssTax = 7.00;
 
 const divisor = 12;
 
